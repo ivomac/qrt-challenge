@@ -1,0 +1,36 @@
+Parameters:
+nans: mean
+time_transform: {'RET': ['std', 'min'], 'VOLUME': ['std', 'min']}
+group_features: [(['VOLUME'], [1, 2], ['mean', 'min'], ['SECTOR', 'DATE']), (['RET'], [1], ['std'], ['DATE']), (['RET'], [1], ['mean', 'max', 'min'], ['SECTOR', 'DATE']), (['RET'], [1], ['max', 'min'], ['SUB_INDUSTRY', 'DATE'])]
+returns_to_keep: 4
+volumes_to_keep: 1
+n_splits: 4
+rf_params: {'class_weight': 'balanced', 'n_estimators': 1000, 'max_depth': 8, 'min_samples_split': 8, 'min_samples_leaf': 4, 'random_state': 0, 'n_jobs': -1}
+
+Fold 1 - Accuracy: 51.57%
+Fold 2 - Accuracy: 52.72%
+Fold 3 - Accuracy: 52.89%
+Fold 4 - Accuracy: 51.05%
+Accuracy: 52.06% [51.29 ; 52.83] (+- 0.77)
+
+Feature importance:
+VOLUME_1_SECTOR_DATE_min       0.088978
+RET_1_SECTOR_DATE_mean         0.085962
+RET_std                        0.079162
+VOLUME_1_SECTOR_DATE_mean      0.076126
+RET_1_SECTOR_DATE_min          0.071408
+VOLUME_2_SECTOR_DATE_min       0.068374
+VOLUME_2_SECTOR_DATE_mean      0.064071
+RET_1_DATE_std                 0.062217
+RET_1_SECTOR_DATE_max          0.058510
+RET_min                        0.054090
+RET_1                          0.047139
+RET_3                          0.037334
+VOLUME_1                       0.033203
+RET_4                          0.033094
+RET_1_SUB_INDUSTRY_DATE_max    0.031879
+VOLUME_min                     0.031043
+RET_1_SUB_INDUSTRY_DATE_min    0.029727
+RET_2                          0.026227
+VOLUME_std                     0.021455
+dtype: float64

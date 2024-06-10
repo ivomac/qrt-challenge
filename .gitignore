@@ -1,1 +1,4 @@
 data
+out/acc_50.*.txt
+out/acc_51.*.txt
+out/*.csv
